@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
-
 class CropItem {
   final String imageUrl;
   final String id;
+  final String name;
 
-  CropItem({required this.id, required this.imageUrl});
+  CropItem({required this.id, required this.imageUrl,required this.name});
 }
