@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hal_aur_ham/Home_Screen.dart';
+import 'package:hal_aur_ham/screens/Home_Screen.dart';
+import './screens/Crop_Scan.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,8 +27,13 @@ class MyApp extends StatelessWidget {
       title: 'Hal Aur Ham',
       theme: ThemeData(
         primarySwatch: MaterialColor(0xFF679B6D, color),
+        fontFamily: 'Comforta',
       ),
       home: HomeScreen(),
+      routes: {
+        HomeScreen.routeName:(ctx)=>HomeScreen(),
+        CropScan.routeName: (ctx) => CropScan(),
+      },
     );
   }
 }

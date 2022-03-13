@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import '../widgets/Main_Drawer.dart';
 
 class CropScan extends StatelessWidget {
+  static const routeName = '/cropScan';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: MainDrawer(),
       backgroundColor: Color(0xFFF5FFF9),
       appBar: AppBar(
         title: const Text(

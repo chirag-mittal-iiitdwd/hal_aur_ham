@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../screens/Crop_Scan.dart';
+import '../screens/Home_Screen.dart';
 
 class MainDrawer extends StatelessWidget {
   @override
@@ -13,7 +15,10 @@ class MainDrawer extends StatelessWidget {
             child: Row(
               children: [
                 SizedBox(
-                  child: Image.asset("assets/images/App_Logo.png"),
+                  child: Padding(
+                    padding: const EdgeInsets.all(30.0),
+                    child: Image.asset("assets/images/App_Logo.png"),
+                  ),
                   width: MediaQuery.of(context).size.width * 0.5,
                 ),
                 Column(
@@ -27,8 +32,9 @@ class MainDrawer extends StatelessWidget {
               ],
             ),
           ),
-        //Settings
-          const ListTile(
+          //Settings
+          ListTile(
+            // onTap:() => Navigator.pushNamed(context, routeName),
             title: Text(
               "Settings",
               textScaleFactor: 2,
@@ -37,40 +43,42 @@ class MainDrawer extends StatelessWidget {
               Icons.settings,
             ),
           ),
-        //My Farm
-          const ListTile(
+          //My Farm
+          ListTile(
+            onTap: () => Navigator.of(context).pushNamed(HomeScreen.routeName),
             title: Text(
               "My Farm",
               textScaleFactor: 2,
             ),
             trailing: Icon(Icons.home),
           ),
-        //Sunscription
-          const ListTile(
+          //Sunscription
+          ListTile(
             title: Text(
               "Subscription",
               textScaleFactor: 2,
             ),
             trailing: Icon(Icons.monetization_on_outlined),
           ),
-        //Crop Scan
-          const ListTile(
+          //Crop Scan
+          ListTile(
+            onTap: () => Navigator.of(context).pushNamed(CropScan.routeName),
             title: Text(
               "Crop Scan",
               textScaleFactor: 2,
             ),
             trailing: Icon(Icons.document_scanner_outlined),
           ),
-        //Crop Viz.
-          const ListTile(
+          //Crop Viz.
+          ListTile(
             title: Text(
               "Crop Viz.",
               textScaleFactor: 2,
             ),
             trailing: Icon(Icons.auto_graph_rounded),
           ),
-        //Logout
-          const ListTile(
+          //Logout
+          ListTile(
             title: Text(
               "Logout",
               textScaleFactor: 2,

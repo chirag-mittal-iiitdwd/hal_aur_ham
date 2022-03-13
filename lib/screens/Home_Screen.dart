@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hal_aur_ham/Crop_Scan.dart';
-import 'package:hal_aur_ham/Main_Drawer.dart';
+import 'package:hal_aur_ham/screens/Crop_Scan.dart';
+import 'package:hal_aur_ham/widgets/Main_Drawer.dart';
 
 //Navigation to CropScan screen
 Future navigateToCropScanPage(context) async {
@@ -8,6 +8,7 @@ Future navigateToCropScanPage(context) async {
 }
 
 class HomeScreen extends StatelessWidget {
+  static const routeName = '/home';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,12 +81,10 @@ class HomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: const [
                       SizedBox(
-                        
-                          child: Icon(
-                            Icons.wb_sunny_outlined,
-                            size: 50,
-                          ),
-                        
+                        child: Icon(
+                          Icons.wb_sunny_outlined,
+                          size: 50,
+                        ),
                         height: 70,
                         width: 70,
                       ),
@@ -193,34 +192,36 @@ class HomeScreen extends StatelessWidget {
                   ),
                   //Drone Status
                   SizedBox(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
-                            Text("Battery Status"),
-                            Icon(Icons.speaker_phone),
-                          ],
-                        ),
-                        const Icon(Icons.battery_full_outlined),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
-                            Text("Connection Status"),
-                            Icon(Icons.speaker_phone),
-                          ],
-                        ),
-                        const Icon(Icons.wifi),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
-                            Text("Emergency Alert"),
-                            Icon(Icons.speaker_phone),
-                          ],
-                        ),
-                        const Icon(Icons.add_alert_outlined)
-                      ],
+                    child: SingleChildScrollView(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: const [
+                              Text("Battery Status"),
+                              Icon(Icons.speaker_phone),
+                            ],
+                          ),
+                          const Icon(Icons.battery_full_outlined),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: const [
+                              Text("Connection Status"),
+                              Icon(Icons.speaker_phone),
+                            ],
+                          ),
+                          const Icon(Icons.wifi),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: const [
+                              Text("Emergency Alert"),
+                              Icon(Icons.speaker_phone),
+                            ],
+                          ),
+                          const Icon(Icons.add_alert_outlined)
+                        ],
+                      ),
                     ),
                     height: MediaQuery.of(context).size.height * 0.20,
                     width: MediaQuery.of(context).size.width * 0.40,
