@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
+
 import './CropItem.dart';
 
-class CropItems {
-  List<CropItem> items = [
+class CropItems with ChangeNotifier {
+  final List<CropItem> _items = [
     CropItem(
       id: '1',
       imageUrl: 'https://images.indianexpress.com/2021/02/grapes-1200.jpg',
@@ -45,7 +47,7 @@ class CropItems {
     CropItem(
       id: '8',
       imageUrl:
-          'https://www.gardeningknowhow.com/wp-content/uploads/2021/05/tomatoes.jpg',
+          'https://images-prod.healthline.com/hlcmsresource/images/AN_images/tomatoes-1296x728-feature.jpg',
       name: 'Tomato',
     ),
     CropItem(
@@ -73,4 +75,8 @@ class CropItems {
       name: 'Capsicum',
     ),
   ];
+
+  List<CropItem> get items {
+    return [..._items];
+  }
 }

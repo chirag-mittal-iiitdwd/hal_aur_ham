@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../screens/Crop_Scan.dart';
 import '../screens/Home_Screen.dart';
+import '../screens/Crop_Change_Screen.dart';
 
 class MainDrawer extends StatelessWidget {
   @override
@@ -34,7 +35,8 @@ class MainDrawer extends StatelessWidget {
           ),
           //Settings
           ListTile(
-            // onTap:() => Navigator.pushNamed(context, routeName),
+            onTap: () => Navigator.of(context)
+                .pushReplacementNamed(CropChange.routeName),
             title: Text(
               "Settings",
               textScaleFactor: 2,
@@ -62,7 +64,8 @@ class MainDrawer extends StatelessWidget {
           ),
           //Crop Scan
           ListTile(
-            onTap: () => Navigator.of(context).pushNamed(CropScan.routeName),
+            onTap: () =>
+                Navigator.of(context).pushReplacementNamed(CropScan.routeName),
             title: Text(
               "Crop Scan",
               textScaleFactor: 2,
