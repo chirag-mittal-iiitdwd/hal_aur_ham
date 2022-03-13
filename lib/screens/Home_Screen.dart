@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:hal_aur_ham/screens/Crop_Scan.dart';
 import 'package:hal_aur_ham/widgets/Main_Drawer.dart';
+import '../screens/profile_screen.dart';
 
 //Navigation to CropScan screen
 Future navigateToCropScanPage(context) async {
@@ -25,7 +27,7 @@ class HomeScreen extends StatelessWidget {
               Icons.person,
               color: Colors.white,
             ),
-            onPressed: () {},
+            onPressed: ()=>Navigator.of(context).pushReplacementNamed(Profile.routeName),
           )
         ],
       ),

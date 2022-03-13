@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import 'package:hal_aur_ham/screens/Home_Screen.dart';
 import './screens/Crop_Scan.dart';
+import './screens/Crop_Change_Screen.dart';
+import './models/cropItems.dart';
+import './screens/profile_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,17 +28,26 @@ Map<int, Color> color = {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Hal Aur Ham',
-      theme: ThemeData(
-        primarySwatch: MaterialColor(0xFF679B6D, color),
-        fontFamily: 'Comforta',
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(
+          value: CropItems(),
+        ),
+      ],
+      child: MaterialApp(
+        title: 'Hal Aur Ham',
+        theme: ThemeData(
+          primarySwatch: MaterialColor(0xFF679B6D, color),
+          fontFamily: 'Comforta',
+        ),
+        home: HomeScreen(),
+        routes: {
+          HomeScreen.routeName: (ctx) => HomeScreen(),
+          CropScan.routeName: (ctx) => CropScan(),
+          CropChange.routeName: (ctx) => CropChange(),
+          Profile.routeName:(ctx)=>Profile(),
+        },
       ),
-      home: HomeScreen(),
-      routes: {
-        HomeScreen.routeName:(ctx)=>HomeScreen(),
-        CropScan.routeName: (ctx) => CropScan(),
-      },
     );
   }
 }
