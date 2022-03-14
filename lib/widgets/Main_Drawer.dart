@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import '../screens/Crop_Scan.dart';
 import '../screens/Home_Screen.dart';

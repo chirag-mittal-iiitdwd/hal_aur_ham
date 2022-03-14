@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hal_aur_ham/screens/Scan_Result.dart';
 import 'package:provider/provider.dart';
 
 import 'package:hal_aur_ham/screens/Home_Screen.dart';
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
         routes: {
           HomeScreen.routeName: (ctx) => HomeScreen(),
           CropScan.routeName: (ctx) => CropScan(),
+          ScanResult.routeName: (ctx) => ScanResult(),
           CropChange.routeName: (ctx) => CropChange(),
           Profile.routeName:(ctx)=>Profile(),
         },
