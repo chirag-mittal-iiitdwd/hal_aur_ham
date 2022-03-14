@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:hal_aur_ham/screens/Crop_Scan.dart';
 import 'package:tflite/tflite.dart';
+import '../widgets/Main_Drawer.dart';
 
 class ScanResult extends StatefulWidget {
   static const routeName = '/scanResult';
@@ -46,6 +47,7 @@ class _ScanResultState extends State<ScanResult> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: MainDrawer(),
       backgroundColor: Color(0xFFF5FFF9),
       appBar: AppBar(
         title: const Text(
