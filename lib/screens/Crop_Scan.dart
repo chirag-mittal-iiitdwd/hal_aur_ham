@@ -1,10 +1,44 @@
-import 'package:flutter/material.dart';
-import '../widgets/Main_Drawer.dart';
+// ignore_for_file: prefer_const_constructors, prefer_typing_uninitialized_variables, non_constant_identifier_names, use_key_in_widget_constructors
 
-class CropScan extends StatelessWidget {
+import 'dart:io';
+import 'package:flutter/material.dart';
+import 'package:hal_aur_ham/screens/Scan_Result.dart';
+import '../widgets/Main_Drawer.dart';
+import 'package:image_picker/image_picker.dart';
+
+ImagePicker picker = ImagePicker();
+var picked_image;
+
+class CropScan extends StatefulWidget {
   static const routeName = '/cropScan';
+
+  @override
+  State<CropScan> createState() => _CropScanState();
+}
+
+class _CropScanState extends State<CropScan> {
   @override
   Widget build(BuildContext context) {
+    Future openGallery() async {
+      final gallery_img = await picker.pickImage(
+        source: ImageSource.gallery,
+      );
+      picked_image = File(gallery_img!.path);
+      if (picked_image != null) {
+        Navigator.of(context).pushReplacementNamed(ScanResult.routeName);
+      }
+    }
+
+    Future openCamera() async {
+      final camera_img = await picker.pickImage(
+        source: ImageSource.camera,
+      );
+      picked_image = File(camera_img!.path);
+      if (picked_image != null) {
+        Navigator.of(context).pushReplacementNamed(ScanResult.routeName);
+      }
+    }
+
     return Scaffold(
       drawer: MainDrawer(),
       backgroundColor: Color(0xFFF5FFF9),
@@ -34,10 +68,13 @@ class CropScan extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.6,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Icon(
-                      Icons.camera_alt_outlined,
-                      size: 70,
+                  children: [
+                    TextButton(
+                      onPressed: openCamera,
+                      child: Icon(
+                        Icons.camera_alt_outlined,
+                        size: 70,
+                      ),
                     ),
                     Text("Take Photo"),
                   ],
@@ -47,11 +84,21 @@ class CropScan extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const Text("OR"),
+            Text(
+              "OR",
+              style: TextStyle(
+                fontSize: 20,
+              ),
+            ),
             TextButton(
-              onPressed: () {},
-              child: Text("Select Image From Gallery"),
-            )
+              onPressed: openGallery,
+              child: Text(
+                "Select Image From Gallery",
+                style: TextStyle(
+                  fontSize: 15,
+                ),
+              ),
+            ),
           ],
         ),
       ),
