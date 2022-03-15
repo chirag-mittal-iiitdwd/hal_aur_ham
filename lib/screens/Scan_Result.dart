@@ -2,6 +2,7 @@
 
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hal_aur_ham/screens/Crop_Scan.dart';
 import 'package:tflite/tflite.dart';
@@ -101,7 +102,7 @@ class _ScanResultState extends State<ScanResult> {
                       style: TextStyle(fontSize: 20),
                     ),
                     trailing: Icon(
-                      Icons.video_library_outlined,
+                      CupertinoIcons.arrowtriangle_right_square,
                       size: 40,
                     ),
                   ),

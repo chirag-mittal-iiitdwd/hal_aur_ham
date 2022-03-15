@@ -1,8 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:hal_aur_ham/screens/Crop_Scan.dart';
 import 'package:hal_aur_ham/widgets/Main_Drawer.dart';
 import '../screens/profile_screen.dart';
+import 'package:cupertino_icons/cupertino_icons.dart';
+
 
 //Navigation to CropScan screen
 Future navigateToCropScanPage(context) async {
@@ -51,7 +54,7 @@ class HomeScreen extends StatelessWidget {
                     children: const [
                       SizedBox(
                         child: Icon(
-                          Icons.speed_sharp,
+                          CupertinoIcons.wind,
                           size: 50,
                         ),
                         height: 70,
@@ -68,7 +71,7 @@ class HomeScreen extends StatelessWidget {
                     children: const [
                       SizedBox(
                         child: Icon(
-                          Icons.cloud_queue,
+                          CupertinoIcons.cloud_bolt_rain,
                           size: 50,
                         ),
                         height: 70,
@@ -85,7 +88,7 @@ class HomeScreen extends StatelessWidget {
                     children: const [
                       SizedBox(
                         child: Icon(
-                          Icons.wb_sunny_outlined,
+                          CupertinoIcons.thermometer,
                           size: 50,
                         ),
                         height: 70,
@@ -248,7 +251,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     height: MediaQuery.of(context).size.height * 0.20,
-                    width: MediaQuery.of(context).size.width * 0.45,
+                    width: MediaQuery.of(context).size.width * 0.50,
                   ),
                 ],
               ),

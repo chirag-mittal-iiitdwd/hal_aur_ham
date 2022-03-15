@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import '../screens/Crop_Scan.dart';
 import '../screens/Home_Screen.dart';
 import '../screens/Crop_Change_Screen.dart';
+import 'package:cupertino_icons/cupertino_icons.dart';
+
 
 class MainDrawer extends StatelessWidget {
   @override
@@ -56,7 +58,7 @@ class MainDrawer extends StatelessWidget {
             ),
             trailing: Icon(Icons.home),
           ),
-          //Sunscription
+          //Subscription
           ListTile(
             title: Text(
               "Subscription",
