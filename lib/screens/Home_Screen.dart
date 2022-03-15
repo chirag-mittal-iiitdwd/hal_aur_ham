@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:hal_aur_ham/screens/Crop_Scan.dart';
 import 'package:hal_aur_ham/widgets/Main_Drawer.dart';
 import '../screens/profile_screen.dart';
@@ -27,7 +27,8 @@ class HomeScreen extends StatelessWidget {
               Icons.person,
               color: Colors.white,
             ),
-            onPressed: ()=>Navigator.of(context).pushReplacementNamed(Profile.routeName),
+            onPressed: () =>
+                Navigator.of(context).pushReplacementNamed(Profile.routeName),
           )
         ],
       ),
@@ -200,25 +201,46 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
+                            children: [
                               Text("Battery Status"),
-                              Icon(Icons.speaker_phone),
+                              IconButton(
+                                  icon: Icon(Icons.volume_up_rounded),
+                                  onPressed: () {
+                                    AssetsAudioPlayer audioplayer =
+                                        AssetsAudioPlayer();
+                                    audioplayer.open(Audio(
+                                        'assets/audio/batterystatus.mp3'));
+                                  })
                             ],
                           ),
                           const Icon(Icons.battery_full_outlined),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
+                            children: [
                               Text("Connection Status"),
-                              Icon(Icons.speaker_phone),
+                              IconButton(
+                                  icon: Icon(Icons.volume_up_rounded),
+                                  onPressed: () {
+                                    AssetsAudioPlayer audioplayer =
+                                        AssetsAudioPlayer();
+                                    audioplayer.open(Audio(
+                                        'assets/audio/connectionstatus.mp3'));
+                                  })
                             ],
                           ),
                           const Icon(Icons.wifi),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
+                            children: [
                               Text("Emergency Alert"),
-                              Icon(Icons.speaker_phone),
+                              IconButton(
+                                  icon: Icon(Icons.volume_up_rounded),
+                                  onPressed: () {
+                                    AssetsAudioPlayer audioplayer =
+                                        AssetsAudioPlayer();
+                                    audioplayer.open(Audio(
+                                        'assets/audio/emergencyalert.mp3'));
+                                  })
                             ],
                           ),
                           const Icon(Icons.add_alert_outlined)
